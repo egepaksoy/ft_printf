@@ -6,7 +6,7 @@
 /*   By: epaksoy <epaksoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 20:02:13 by epaksoy           #+#    #+#             */
-/*   Updated: 2023/07/22 13:15:33 by epaksoy          ###   ########.fr       */
+/*   Updated: 2023/07/22 14:19:15 by epaksoy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	ft_formater(va_list *args, char c)
 	else if (c == 'x' || c == 'X')
 		return (ft_puthex(va_arg((*args), int), c));
 	else if (c == 'p')
-		return (ft_point(va_arg((*args), int)));
+		return (ft_point(va_arg((*args), int), 1));
 	else if (c == 's')
 		return (ft_putstr(va_arg((*args), char *)));
 	else

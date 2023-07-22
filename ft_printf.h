@@ -6,7 +6,7 @@
 /*   By: epaksoy <epaksoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 20:04:11 by epaksoy           #+#    #+#             */
-/*   Updated: 2023/07/22 13:43:02 by epaksoy          ###   ########.fr       */
+/*   Updated: 2023/07/22 14:17:49 by epaksoy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-int	ft_putnbr(int i);
+int	ft_putnbr(int a);
 int	ft_puthex(int i, char c);
-int	ft_point(int i);
+int	ft_point(unsigned long a, int sign);
 int	ft_putnbr_u(unsigned int i);
 int	ft_putstr(char *s);
 int	ft_putchar(int c);
