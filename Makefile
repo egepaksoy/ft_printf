@@ -6,13 +6,13 @@
 #    By: epaksoy <epaksoy@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/16 20:04:36 by epaksoy           #+#    #+#              #
-#    Updated: 2023/07/16 20:07:39 by epaksoy          ###   ########.fr        #
+#    Updated: 2023/07/22 13:24:11 by epaksoy          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 FLAG = -Wall -Wextra -Werror
-SRC = $(shell find . -name "ft_*.c")
+SRC = $(shell find . ! -name "main.c" -name "ft_*.c")
 
 all: $(NAME)
 
