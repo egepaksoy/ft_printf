@@ -6,7 +6,7 @@
 /*   By: epaksoy <epaksoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 20:04:20 by epaksoy           #+#    #+#             */
-/*   Updated: 2023/07/22 14:51:56 by epaksoy          ###   ########.fr       */
+/*   Updated: 2023/07/24 12:37:42 by epaksoy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,22 +60,32 @@ int	ft_putnbr_u(unsigned int a)
 	return (ret);
 }
 
-int	ft_puthex(int i, char c)
+int	ft_hex(unsigned int a, char c)
 {
 	int	ret;
 
 	ret = 0;
-	if (i >= 16)
-		ret += ft_puthex(i / 16, c);
+	if (a >= 16)
+		ret += ft_hex(a / 16, c);
 	if (c == 'X')
-		ret += write(1, &"0123456789ABCDEF"[i % 16], 1);
+		write(1, &"0123456789ABCDEF"[a % 16], 1);
 	if (c == 'x')
-		ret += write(1, &"0123456789abcdef"[i % 16], 1);
-	return (ret);
+		write(1, &"0123456789abcdef"[a % 16], 1);
+	return (ret + 1);
 }
 
-int	ft_point(unsigned long a)
+int	ft_point(unsigned long a, int sign)
 {
-	write(1, "0x", 2);
-	return (2 + ft_puthex(a, 'x'));
+	int	ret;
+
+	ret = 0;
+	if (sign == 1)
+	{
+		ret += write(1, "0x", 2);
+		sign = 0;
+	}
+	if (a >= 16)
+		ret += ft_point(a / 16, 0);
+	write(1, &"0123456789abcdef"[a % 16], 1);
+	return (ret + 1);
 }
